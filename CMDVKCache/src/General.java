@@ -42,7 +42,7 @@ public class General {
                 ForChromium.getMusic(fromPathYa, toPath);//Yandex
                 break;
             default:
-                System.out.println("Incorrect input");
+                System.err.println("Incorrect input");
                 break;
 
         }
@@ -67,6 +67,9 @@ public class General {
                             System.out.println("Enter the path of ZIP archive");
                             System.out.println("For example: D:\\MusicCache\\Music.zip");
                             pathZip = reader.readLine();
+                            if (!pathZip.substring(pathZip.length() - 4).equals(".zip")){
+                                System.err.println("Incorrect file format!!!");
+                            break;}
                             System.out.println("Enter the path to unzip archive");
                             System.out.println("For example: D:\\MusicCache");
                             String pathUnZip = reader.readLine();
